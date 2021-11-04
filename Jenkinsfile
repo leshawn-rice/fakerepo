@@ -4,6 +4,9 @@ pipeline {
     agent any
 
     stages {
+        stage('Checkout') {
+            checkout scm
+        }
         stage('Build') {
             steps {
                 echo 'Launching build server virtual machine'
@@ -13,7 +16,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                cat test
+                sh 'cat ./test'
             }
         }
         stage('Deploy') {
