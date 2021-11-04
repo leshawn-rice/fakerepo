@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Launching build server virtual machine'
-                ansible playbook: /home/ld-admin/playbooks/test/playbook.yml
+                ansiblePlaybook playbook: '/home/ld-admin/playbooks/test/playbook.yml'
                 echo 'Building firmware'
             }
         }
